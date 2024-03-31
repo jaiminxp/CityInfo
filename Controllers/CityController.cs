@@ -9,11 +9,12 @@ public class CityController : ControllerBase
     [HttpGet]
     public JsonResult GetCities()
     {
-        return new JsonResult(
-            new List<object> {
-                new { id = 1, Name = "New York"},
-                new { id = 2, Name = "London"}
-            }
-        );
+        return new JsonResult(CitiesDataStore.Current.Cities);
+    }
+
+    [HttpGet("{id}")]
+    public JsonResult GetCity(int id)
+    {
+        return new JsonResult(CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id));
     }
 }
