@@ -3,8 +3,8 @@ using CityInfo.API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyApp.Namespace
-{
+namespace CityInfo.API.Controllers;
+
     [Route("api/cities/{cityId}/pointsofinterest")]
     [ApiController]
     public class PointsOfInterestController : ControllerBase
@@ -106,4 +106,4 @@ namespace MyApp.Namespace
             return NoContent();
         }
     }
-}
+

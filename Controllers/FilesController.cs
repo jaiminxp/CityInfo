@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 
-namespace MyApp.Namespace
-{
+namespace CityInfo.API.Controllers;
+
     [Route("api/files")]
     [ApiController]
     public class FilesController : ControllerBase
@@ -49,4 +49,4 @@ namespace MyApp.Namespace
             return Ok("Your file has been successfully uploaded.");
         }
     }
-}
+
