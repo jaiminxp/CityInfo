@@ -1,3 +1,4 @@
+using System.Drawing;
 using CityInfo.API.DbContexts;
 using CityInfo.API.Entities;
 using CityInfo.API.Services;
@@ -56,5 +57,10 @@ public class CityInfoRepository : ICityInfoRepository
     public async Task<bool> SaveChangesAsync()
     {
         return await _context.SaveChangesAsync() >= 0;
+    }
+
+    public void DeletePointOfInterest(PointOfInterest pointOfInterest)
+    {
+        _context.PointsOfInterest.Remove(pointOfInterest);
     }
 }
