@@ -76,7 +76,7 @@ public class PointsOfInterestController : ControllerBase
         {
             cityId,
             pointOfInterestId = createdPointOfInterestToReturn.Id
-        }, finalPointOfInterest);
+        }, createdPointOfInterestToReturn);
     }
 
     // [HttpPut("{pointofinterestid}")]

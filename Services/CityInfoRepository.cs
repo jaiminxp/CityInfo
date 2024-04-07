@@ -1,4 +1,4 @@
-﻿using CityInfo.API.DbContexts;
+using CityInfo.API.DbContexts;
 using CityInfo.API.Entities;
 using CityInfo.API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +26,7 @@ public class CityInfoRepository : ICityInfoRepository
             return await _context.Cities.Include(c => c.PointsOfInterest).Where(c => c.Id == cityId).FirstOrDefaultAsync();
         }
 
-        return await _context.Cities.Include(c => c.PointsOfInterest).Where(c => c.Id == cityId).FirstOrDefaultAsync();
+        return await _context.Cities.Where(c => c.Id == cityId).FirstOrDefaultAsync();
     }
 
     public async Task<bool> CityExistsAsync(int cityId)
