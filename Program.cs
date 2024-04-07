@@ -43,6 +43,8 @@ builder.Services.AddDbContext<CityInfoContext>(dbContextOptions =>
 
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
