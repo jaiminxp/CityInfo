@@ -9,8 +9,9 @@
             Get city by id
             </summary>
             <param name="id">The id of the city to get</param>
-            <param name="includePointsOfInterest">A city with or without points of interest</param>
-            <returns></returns>
+            <param name="includePointsOfInterest">Whether to include the points of interest</param>
+            <returns>A city with or without points of interest</returns>
+            <response code="200">Returns the requested city</response>
         </member>
         <member name="T:CityInfo.API.Migrations.CityInfoDBInitialMigration">
             <inheritdoc />
