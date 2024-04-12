@@ -59,6 +59,15 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
     };
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MustBeFromNewYork", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("city", "New York");
+    });
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
