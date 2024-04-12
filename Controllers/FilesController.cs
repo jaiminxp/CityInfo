@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ namespace CityInfo.API.Controllers;
 
 [Route("api/files")]
 [ApiController]
-[Authorize]
+// [Authorize]
 public class FilesController : ControllerBase
 {
     private readonly FileExtensionContentTypeProvider _fileExtensionContentTypeProvider;
@@ -19,6 +20,7 @@ public class FilesController : ControllerBase
     }
 
     [HttpGet("{fileId}")]
+    [ApiVersion(0.1, Deprecated = true)]
     public ActionResult GetFile(string fileId)
     {
         var pathTofile = "csharp-icon.svg";
