@@ -78,8 +78,6 @@ public class AuthenticationController : ControllerBase
     private CityInfoUser ValidUserCredentials(string? userName, string? password)
     {
         // assume that the credentials are valid/
-        return new CityInfoUser(1, userName ?? "", "Jaimin", "Parmar", "Ahmedabad");
+        return new CityInfoUser(1, userName ?? "", "Jaimin", "Parmar", "New York");
     }
-
-
 }
